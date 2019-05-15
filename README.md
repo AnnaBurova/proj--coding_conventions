@@ -4,3 +4,4 @@
 - program settings
   - Sublime Text 3
 - code snippets
+- git settings
