@@ -1,0 +1,96 @@
+## Core Features - Default charset parameter #################################################### ##
+
+# Charset parameter when a response content-type is text/plain or text/html.
+AddDefaultCharset UTF-8
+
+## Core Features - Configures features in directory ############################################# ##
+
+# Disable: The server will follow symbolic links in this directory.
+Options -FollowSymLinks
+
+# Disable: If a URL which maps to a directory is requested and there is
+#   no DirectoryIndex (e.g., index.html) in that directory, then
+#   mod_autoindex will return a formatted listing of the directory.
+Options -Indexes
+
+# Disable: The server does an implicit filename pattern match, and choose from amongst the results.
+Options -MultiViews
+
+## PHP Module ################################################################################### ##
+
+# Sets the max time a script is allowed to run before it is terminated by the parser.
+# Default: 30 (seconds).
+# When running PHP from the command line: Default: 0.
+php_value max_execution_time 60
+
+# Sets the max amount of memory that a script is allowed to allocate.
+# Default: 16M (bytes)
+# To have no memory limit, set to -1.
+php_value memory_limit 32M
+
+# Sets max size of POST data allowed.
+# This setting also affects file upload.
+# If the size of POST data is greater than [post_max_size],
+#   the $_POST and $_FILES superglobals are empty.
+# To upload large files, this value must be larger than [upload_max_filesize].
+# [memory_limit] should be larger than [post_max_size].
+# Default: 8M (bytes)
+php_value post_max_size 16M
+
+# The max size of an uploaded file.
+# Default: 2M (bytes)
+php_value upload_max_filesize 4M
+
+## Module mod_rewrite ########################################################################### ##
+
+# Enable: Runtime rewriting engine.
+RewriteEngine on
+
+# Sets the base URL for per-directory rewrites.
+RewriteBase /
+
+## Custom Error Responses ####################################################################### ##
+
+# What server will return to client in case of an error.
+ErrorDocument 400 /error-400.html
+ErrorDocument 401 /error-401.html
+ErrorDocument 403 /error-403.html
+ErrorDocument 404 /error-404.html
+ErrorDocument 500 /error-500.html
+
+## Module mod_authn_core ######################################################################## ##
+
+# Type of user authentication.
+AuthType Basic
+
+# This directive sets the name of the authorization realm for a directory.
+# The string will appear in the password dialog provided by most browsers.
+AuthName "Restricted Access. Please enter login and password."
+
+# Sets the name of a text file containing the list of users and passwords for authentication.
+AuthUserFile .htpasswd
+
+# Tests whether an authenticated user is authorized by an authorization provider.
+# Require valid-user
+Require user admin
+
+## Module mod_rewrite - Condition under which rewriting will take place ######################### ##
+
+# If the file with the specified name in the browser doesn't exist,
+#   then procede to the rewrite rule below
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# If the directory with the specified name in the browser doesn't exist,
+#   then procede to the rewrite rule below
+RewriteCond %{REQUEST_FILENAME} !-d
+
+## Module mod_rewrite - Rules for the rewriting engine ########################################## ##
+
+RewriteRule ^([a-z0-9_-]*)$ /index.php [L,NC]
+RewriteRule ^admin/$ /admin.php [L,NC]
+
+RewriteRule ^([a-z0-9_-]+)/$ /index.php?p=$1 [L,NC]
+RewriteRule ^admin/([a-z0-9_-]+)/$ /admin.php?p=$1 [L,NC]
+
+RewriteRule ^([a-z0-9_-]+)/([a-z0-9_-]+)/$ /index.php?l=$1&p=$2 [L,NC]
+RewriteRule ^admin/([a-z0-9_-]+)/([a-z0-9_-]+)/$ /admin.php?l=$1&p=$2 [L,NC]
