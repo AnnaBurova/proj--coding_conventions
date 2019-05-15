@@ -1,1 +1,3 @@
-# coding-conventions
+# Coding Conventions
+
+- code guidelines

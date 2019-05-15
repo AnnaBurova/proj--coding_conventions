@@ -1,0 +1,22 @@
+## Code Guidelines - HTML
+
+- Pre-Names of form-input-elements (name=""):
+  - `btn_` - submit, button
+  - `chk_` - checkbox, radio
+  - `hid_` - hidden
+  - `opt_` - select options
+  - `txt_` - text, password
+  - `upl_` - file
+- Always close single tag `< />`
+- Attribute order:
+  - type / rel
+  - value / placeholder / href / src
+  - alt
+  - name
+  - ID
+  - class
+  - style
+  - onclick
+- Attribute order for `<meta>`
+  - name
+  - content
