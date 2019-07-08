@@ -1,34 +1,26 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-ini_set('log_errors', 'On');
-ini_set('error_log', DOCROOT);
-
 /** Globals ************************************************************************************ **/
 
-  // All globals for Project (relative)
   include_once('../inc/define.php');
-
-  // ID from Project
   define('ID', '');
-
-  // Path folders (from docroot to file location)
   define('PATH', '/');
-
-  // Title from project: used in title, meta, h1
   define('TITLE', '');
+
+/** Errors ************************************************************************************* **/
+
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+  ini_set('log_errors', 'On');
+  ini_set('error_log', DOCROOT);
 
 /** MVC Model ********************************************************************************** **/
 
-  // Model
   include_once('ClassName.php');
   $class = new ClassName();
 
-  // Controller
   include_once('controller.php');
 
-  // View
   include_once('view.php');
 
 /** Visibility of page ************************************************************************* **/
