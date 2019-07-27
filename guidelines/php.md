@@ -50,15 +50,15 @@ else {
 switch (condition) {
   case 1:
     action1;
-    break;
+  break;
 
   case 2:
     action2;
-    break;
+  break;
 
   default:
     defaultaction;
-    break;
+  break;
 }
 ```
 
