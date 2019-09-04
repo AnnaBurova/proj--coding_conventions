@@ -23,7 +23,7 @@ arguments and the opening/closing brackets, like `function test_test($test1, $te
 - When using associative arrays, should include the key within `single quotes` and `underscores`
 - Use lowercase for boolean `true / false`
 - Try to use `===` if compare something
-- By using string operators, should be NO spaces on the sides of it
+- By using string operators `.`, should be NO spaces on the sides of it
 
 ### Examples: IF-ELSE statement
 
