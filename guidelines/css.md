@@ -12,6 +12,9 @@
   - width / height (min- / max-)
   - margin / border / padding / box-sizing
   - position / its values
+  - font / line
+  - background
+  - color
 - Separate style value for padding / margin / position (clockwise):
   - top
   - right
