@@ -1,8 +1,8 @@
 Package Control -> https://packagecontrol.io/installation#st3
 SFTP
-FileDiffs
 View In Browser -> https://packagecontrol.io/packages/View%20In%20Browser
 TrailingSpaces
 BracketHighlighter
 Babel
 AutoFileName
+Sublimerge 3
