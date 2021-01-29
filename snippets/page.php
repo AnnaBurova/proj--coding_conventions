@@ -27,19 +27,26 @@
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
   <title><?=TITLE;?> - <?=ID;?> - <?=PROJECT_NAME;?></title>
-  <meta name="description" content="<?=TITLE;?> - <?=ID;?> - <?=PROJECT_NAME;?>">
-  <meta name="keywords" content="web-development, creations, web-design, php, js, html5, css3">
-  <meta name="viewport" content="width=device-width">
-  <link rel="icon" href="/inc/images/icon.png">
+  <meta name="description" content="<?=TITLE;?> - <?=ID;?> - <?=PROJECT_NAME;?>" />
+  <meta name="keywords" content="web-development, creations, web-design, php, js, html5, css3" />
+
+  <link rel="icon" href="/inc/images/icon.png" />
   <!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css" />
   <script src="/inc/google-analytics.js"></script>
+
 </head>
 <body>
+
   <div id="wrapper">
     <header>
       <p id="reload_button">
@@ -47,13 +54,17 @@
           &#8634; You can reload page here
         </a>
       </p>
+
       <h1><?=TITLE;?></h1>
     </header>
+
     <main>
     </main>
+
     <footer>
       <?php include_once(DOCROOT.'/inc/footer.php'); ?>
     </footer>
   </div>
+
 </body>
 </html>
