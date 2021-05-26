@@ -1,8 +1,9 @@
 Package Control -> https://packagecontrol.io/installation#st3
 SFTP
 View In Browser -> https://packagecontrol.io/packages/View%20In%20Browser
-TrailingSpaces
-BracketHighlighter
-Babel
 AutoFileName
+BracketHighlighter
 Sublimerge 3
+TrailingSpaces
+
+Agila Theme: Agila Neon Theme
